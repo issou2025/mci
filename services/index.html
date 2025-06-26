@@ -45,7 +45,7 @@ const list = document.getElementById('services-list');
 services.forEach(s => {
     const div = document.createElement('div');
     div.className = 'service';
-    div.innerHTML = `<img src="${s.img}" alt="${s.title}" loading="lazy"><h4>${s.title}</h4><p>${s.desc}</p><a href="${s.slug}.html">Read more</a>`;
+    div.innerHTML = `<h4>${s.title}</h4><p>${s.desc}</p><a href="${s.slug}.html">Read more</a>`;
     list.appendChild(div);
 });
 </script>
