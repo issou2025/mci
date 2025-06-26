@@ -1,0 +1,4 @@
+/* Simple admin panel styles */
+.admin-nav { display:flex; gap:1rem; margin-bottom:1rem; }
+.admin-table { width:100%; border-collapse:collapse; }
+.admin-table th, .admin-table td { border:1px solid #ddd; padding:0.5rem; }
