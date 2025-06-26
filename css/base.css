@@ -1,0 +1,74 @@
+/* Base styles */
+/* Set up font stacks and soft color palette */
+:root {
+    --color-primary: #6c63ff; /* Accent color 1 */
+    --color-secondary: #ff6584; /* Accent color 2 */
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --font-heading: 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Georgia', serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+.btn--primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+    background: #574fd6;
+}
+.btn--secondary {
+    background: var(--color-secondary);
+    color: #fff;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+    background: #d4506d;
+}
+

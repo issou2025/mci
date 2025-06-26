@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Creative Industries</title>
+    <meta name="description" content="Showcase of modern creative industries offering design services.">
+    <meta property="og:title" content="Modern Creative Industries">
+    <meta property="og:description" content="Showcase of modern creative industries offering design services.">
+    <meta property="og:type" content="website">
+    <link rel="preload" href="css/base.css" as="style">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header" role="banner">
+        <div class="header__inner">
+            <h1 class="header__logo">MCI</h1>
+            <p class="header__tagline">Modern Creative Industries</p>
+            <button class="header__toggle" aria-label="Toggle navigation">
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+            </button>
+            <nav class="nav" role="navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="#features">Features</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main" class="main" role="main">
+        <section class="hero" aria-label="Hero">
+            <div class="hero__content">
+                <h2 class="hero__title">Create. Inspire. Innovate.</h2>
+                <p class="hero__subtitle">We design beautiful experiences for the modern web.</p>
+                <a href="#services" class="btn btn--primary">Our Services</a>
+            </div>
+        </section>
+        <section id="features" class="section section--alt" aria-label="Features">
+            <div class="section__inner">
+                <h3 class="section__title">Features</h3>
+                <div class="grid grid--2cols">
+                    <div class="feature">
+                        <img class="feature__img" src="img/feature1.jpg" alt="Feature 1" loading="lazy">
+                        <h4 class="feature__title">Feature 1</h4>
+                        <p class="feature__desc">Description of feature 1.</p>
+                    </div>
+                    <div class="feature">
+                        <img class="feature__img" src="img/feature2.jpg" alt="Feature 2" loading="lazy">
+                        <h4 class="feature__title">Feature 2</h4>
+                        <p class="feature__desc">Description of feature 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section" aria-label="Services">
+            <div class="section__inner">
+                <h3 class="section__title">Services</h3>
+                <div class="grid grid--2cols">
+                    <div class="service">
+                        <img class="service__img" src="img/service1.jpg" alt="Service 1" loading="lazy">
+                        <h4 class="service__title">Service 1</h4>
+                        <p class="service__desc">Description of service 1.</p>
+                    </div>
+                    <div class="service">
+                        <img class="service__img" src="img/service2.jpg" alt="Service 2" loading="lazy">
+                        <h4 class="service__title">Service 2</h4>
+                        <p class="service__desc">Description of service 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="section section--alt" aria-label="Portfolio">
+            <div class="section__inner">
+                <h3 class="section__title">Portfolio</h3>
+                <div class="grid grid--3cols">
+                    <figure class="gallery-item">
+                        <img class="gallery-item__img" src="img/portfolio1.jpg" alt="Project 1" loading="lazy">
+                        <figcaption class="gallery-item__caption">Project 1</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img class="gallery-item__img" src="img/portfolio2.jpg" alt="Project 2" loading="lazy">
+                        <figcaption class="gallery-item__caption">Project 2</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img class="gallery-item__img" src="img/portfolio3.jpg" alt="Project 3" loading="lazy">
+                        <figcaption class="gallery-item__caption">Project 3</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="section" aria-label="Testimonials">
+            <div class="section__inner">
+                <h3 class="section__title">Testimonials</h3>
+                <div class="testimonials">
+                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <p class="testimonial__text" itemprop="reviewBody">"Amazing service and stunning design!"</p>
+                        <cite class="testimonial__author" itemprop="author">— Happy Client</cite>
+                    </blockquote>
+                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <p class="testimonial__text" itemprop="reviewBody">"Truly transformed our business presence online."</p>
+                        <cite class="testimonial__author" itemprop="author">— Another Client</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <form class="newsletter" action="#" method="post" aria-label="Newsletter Signup">
+                <label for="newsletter-email" class="newsletter__label">Subscribe to our newsletter</label>
+                <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Email" required>
+                <button type="submit" class="btn btn--secondary">Sign Up</button>
+            </form>
+            <ul class="social">
+                <li class="social__item"><a class="social__link" href="#" aria-label="Twitter">T</a></li>
+                <li class="social__item"><a class="social__link" href="#" aria-label="Facebook">F</a></li>
+                <li class="social__item"><a class="social__link" href="#" aria-label="Instagram">I</a></li>
+            </ul>
+            <p class="footer__copy">&copy; 2024 Modern Creative Industries</p>
+        </div>
+    </footer>
+</body>
+</html>
