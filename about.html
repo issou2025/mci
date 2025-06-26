@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MCI</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script type="module" defer src="js/main.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header__inner">
+        <h1 class="header__logo">MCI</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="services/">Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="blog/">Blog</a></li>
+            </ul>
+        </nav>
+        <button class="header__toggle" aria-label="Toggle navigation">
+            <span class="header__toggle-bar"></span>
+            <span class="header__toggle-bar"></span>
+            <span class="header__toggle-bar"></span>
+        </button>
+    </div>
+</header>
+<main class="main">
+    <section class="section" aria-label="Our Team">
+        <div class="section__inner">
+            <h2 class="section__title">Our Team</h2>
+            <div id="team" class="grid grid--2cols"></div>
+        </div>
+    </section>
+    <section class="section section--alt" aria-label="Mission">
+        <div class="section__inner">
+            <h2 class="section__title">Our Mission</h2>
+            <p>Building innovative digital experiences for everyone.</p>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__inner">
+        <p class="footer__copy">&copy; 2024 MCI</p>
+    </div>
+</footer>
+<script type="module">
+import { team } from './js/data.js';
+const teamDiv = document.getElementById('team');
+team.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'feature';
+    card.innerHTML = `<img src="${t.img}" alt="${t.name}" loading="lazy"><h4>${t.name}</h4><p>${t.role}</p><p>${t.bio}</p>`;
+    teamDiv.appendChild(card);
+});
+</script>
+</body>
+</html>

@@ -72,3 +72,11 @@ img {
     background: #d4506d;
 }
 
+
+/* Utility classes */
+.hidden { display: none; }
+.modal { position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; }
+.modal.open { display:flex; }
+.modal__content { background:#fff; padding:2rem; border-radius:4px; max-width:400px; width:90%; }
+.modal .close { cursor:pointer; float:right; }
+

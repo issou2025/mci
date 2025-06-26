@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+To connect a real CMS, replace the JSON arrays in js/data.js with API
+calls that fetch data. The template loops in script tags will render
+new content automatically.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,27 +18,39 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
-    <script defer src="js/main.js"></script>
+    <script type="module" defer src="js/main.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="header" role="banner">
         <div class="header__inner">
             <h1 class="header__logo">MCI</h1>
-            <p class="header__tagline">Modern Creative Industries</p>
+            <nav class="nav" role="navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                    <li class="nav__item"><a class="nav__link" href="services/">Services</a></li>
+                    <li class="nav__item"><a class="nav__link" href="blog/">Blog</a></li>
+                    <li class="nav__item"><a class="nav__link" href="resources.html">Resources</a></li>
+                    <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input id="search" type="text" placeholder="Search">
+                <ul id="suggestions" class="hidden"></ul>
+            </div>
             <button class="header__toggle" aria-label="Toggle navigation">
                 <span class="header__toggle-bar"></span>
                 <span class="header__toggle-bar"></span>
                 <span class="header__toggle-bar"></span>
             </button>
-            <nav class="nav" role="navigation">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link" href="#features">Features</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#testimonials">Testimonials</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <main id="main" class="main" role="main">
@@ -41,92 +58,68 @@
             <div class="hero__content">
                 <h2 class="hero__title">Create. Inspire. Innovate.</h2>
                 <p class="hero__subtitle">We design beautiful experiences for the modern web.</p>
-                <a href="#services" class="btn btn--primary">Our Services</a>
+                <a href="#features" class="btn btn--primary">Our Services</a>
             </div>
         </section>
         <section id="features" class="section section--alt" aria-label="Features">
             <div class="section__inner">
                 <h3 class="section__title">Features</h3>
-                <div class="grid grid--2cols">
-                    <div class="feature">
-                        <img class="feature__img" src="img/feature1.jpg" alt="Feature 1" loading="lazy">
-                        <h4 class="feature__title">Feature 1</h4>
-                        <p class="feature__desc">Description of feature 1.</p>
-                    </div>
-                    <div class="feature">
-                        <img class="feature__img" src="img/feature2.jpg" alt="Feature 2" loading="lazy">
-                        <h4 class="feature__title">Feature 2</h4>
-                        <p class="feature__desc">Description of feature 2.</p>
-                    </div>
+                <div class="grid grid--2cols" id="feature-list">
+                    <!-- Features populated from services data -->
                 </div>
             </div>
         </section>
-        <section id="services" class="section" aria-label="Services">
+        <section id="latest" class="section" aria-label="Latest News">
             <div class="section__inner">
-                <h3 class="section__title">Services</h3>
-                <div class="grid grid--2cols">
-                    <div class="service">
-                        <img class="service__img" src="img/service1.jpg" alt="Service 1" loading="lazy">
-                        <h4 class="service__title">Service 1</h4>
-                        <p class="service__desc">Description of service 1.</p>
-                    </div>
-                    <div class="service">
-                        <img class="service__img" src="img/service2.jpg" alt="Service 2" loading="lazy">
-                        <h4 class="service__title">Service 2</h4>
-                        <p class="service__desc">Description of service 2.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio" class="section section--alt" aria-label="Portfolio">
-            <div class="section__inner">
-                <h3 class="section__title">Portfolio</h3>
-                <div class="grid grid--3cols">
-                    <figure class="gallery-item">
-                        <img class="gallery-item__img" src="img/portfolio1.jpg" alt="Project 1" loading="lazy">
-                        <figcaption class="gallery-item__caption">Project 1</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img class="gallery-item__img" src="img/portfolio2.jpg" alt="Project 2" loading="lazy">
-                        <figcaption class="gallery-item__caption">Project 2</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img class="gallery-item__img" src="img/portfolio3.jpg" alt="Project 3" loading="lazy">
-                        <figcaption class="gallery-item__caption">Project 3</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-        <section id="testimonials" class="section" aria-label="Testimonials">
-            <div class="section__inner">
-                <h3 class="section__title">Testimonials</h3>
-                <div class="testimonials">
-                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
-                        <p class="testimonial__text" itemprop="reviewBody">"Amazing service and stunning design!"</p>
-                        <cite class="testimonial__author" itemprop="author">— Happy Client</cite>
-                    </blockquote>
-                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
-                        <p class="testimonial__text" itemprop="reviewBody">"Truly transformed our business presence online."</p>
-                        <cite class="testimonial__author" itemprop="author">— Another Client</cite>
-                    </blockquote>
-                </div>
+                <h3 class="section__title">Latest News</h3>
+                <div id="latest-posts"></div>
             </div>
         </section>
     </main>
     <footer class="footer" role="contentinfo">
         <div class="footer__inner">
-            <form class="newsletter" action="#" method="post" aria-label="Newsletter Signup">
-                <label for="newsletter-email" class="newsletter__label">Subscribe to our newsletter</label>
-                <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Email" required>
-                <button type="submit" class="btn btn--secondary">Sign Up</button>
-            </form>
+            <button class="btn btn--secondary" data-modal="newsletter-modal">Subscribe</button>
             <ul class="social">
-                <li class="social__item"><a class="social__link" href="#" aria-label="Twitter">T</a></li>
-                <li class="social__item"><a class="social__link" href="#" aria-label="Facebook">F</a></li>
-                <li class="social__item"><a class="social__link" href="#" aria-label="Instagram">I</a></li>
+                <li class="social__item"><a class="social__link" href="#" aria-label="Twitter">T <span>0</span></a></li>
+                <li class="social__item"><a class="social__link" href="#" aria-label="Facebook">F <span>0</span></a></li>
+                <li class="social__item"><a class="social__link" href="#" aria-label="Instagram">I <span>0</span></a></li>
             </ul>
             <p class="footer__copy">&copy; 2024 Modern Creative Industries</p>
+            <div class="language-switcher" aria-label="Language switcher">
+                <a href="#">EN</a> | <a href="#">FR</a> | <a href="#">ES</a>
+            </div>
         </div>
     </footer>
+    <div id="newsletter-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+        <div class="modal__content">
+            <button class="close" aria-label="Close">&times;</button>
+            <h3 id="newsletter-title">Newsletter Signup</h3>
+            <form class="validate" action="#" method="post">
+                <label>Email <input type="email" required></label>
+                <button class="btn btn--primary">Join</button>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        import { services, posts } from './js/data.js';
+        const featureList = document.getElementById('feature-list');
+        if (featureList) {
+            services.forEach(s => {
+                const div = document.createElement('div');
+                div.className = 'feature';
+                div.innerHTML = `<img src="${s.img}" alt="${s.title}" loading="lazy">
+                <h4 class="feature__title">${s.title}</h4><p class="feature__desc">${s.desc}</p>`;
+                featureList.appendChild(div);
+            });
+        }
+        const latest = document.getElementById('latest-posts');
+        if (latest) {
+            posts.slice(0,3).forEach(p => {
+                const article = document.createElement('article');
+                article.innerHTML = `<h4><a href="blog/${p.slug}.html">${p.title}</a></h4>`;
+                latest.appendChild(article);
+            });
+        }
+    </script>
 </body>
 </html>

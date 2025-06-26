@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - MCI</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <script type="module" defer src="../js/main.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header__inner">
+        <h1 class="header__logo">MCI</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="../blog/">Blog</a></li>
+            </ul>
+        </nav>
+        <button class="header__toggle" aria-label="Toggle navigation">
+            <span class="header__toggle-bar"></span>
+            <span class="header__toggle-bar"></span>
+            <span class="header__toggle-bar"></span>
+        </button>
+    </div>
+</header>
+<main class="main">
+    <section class="section" aria-label="Services">
+        <div class="section__inner">
+            <h2 class="section__title">Our Services</h2>
+            <div id="services-list" class="grid grid--2cols"></div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__inner">
+        <p class="footer__copy">&copy; 2024 MCI</p>
+    </div>
+</footer>
+<script type="module">
+import { services } from '../js/data.js';
+const list = document.getElementById('services-list');
+services.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'service';
+    div.innerHTML = `<img src="${s.img}" alt="${s.title}" loading="lazy"><h4>${s.title}</h4><p>${s.desc}</p><a href="${s.slug}.html">Read more</a>`;
+    list.appendChild(div);
+});
+</script>
+</body>
+</html>
