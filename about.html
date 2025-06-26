@@ -52,7 +52,7 @@ const teamDiv = document.getElementById('team');
 team.forEach(t => {
     const card = document.createElement('div');
     card.className = 'feature';
-    card.innerHTML = `<img src="${t.img}" alt="${t.name}" loading="lazy"><h4>${t.name}</h4><p>${t.role}</p><p>${t.bio}</p>`;
+    card.innerHTML = `<h4>${t.name}</h4><p>${t.role}</p><p>${t.bio}</p>`;
     teamDiv.appendChild(card);
 });
 </script>

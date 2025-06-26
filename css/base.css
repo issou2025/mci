@@ -1,12 +1,13 @@
 /* Base styles */
-/* Set up font stacks and soft color palette */
+/* Modern font stacks and soft color palette */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap');
 :root {
-    --color-primary: #6c63ff; /* Accent color 1 */
-    --color-secondary: #ff6584; /* Accent color 2 */
-    --color-background: #ffffff;
-    --color-text: #333333;
-    --font-heading: 'Helvetica Neue', Arial, sans-serif;
-    --font-body: 'Georgia', serif;
+    --color-primary: #4f46e5; /* Indigo 600 */
+    --color-secondary: #ec4899; /* Pink 500 */
+    --color-background: #fdfdfd;
+    --color-text: #1f2937;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 html {
@@ -23,6 +24,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4 {

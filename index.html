@@ -107,8 +107,7 @@ new content automatically.
             services.forEach(s => {
                 const div = document.createElement('div');
                 div.className = 'feature';
-                div.innerHTML = `<img src="${s.img}" alt="${s.title}" loading="lazy">
-                <h4 class="feature__title">${s.title}</h4><p class="feature__desc">${s.desc}</p>`;
+                div.innerHTML = `<h4 class="feature__title">${s.title}</h4><p class="feature__desc">${s.desc}</p>`;
                 featureList.appendChild(div);
             });
         }
